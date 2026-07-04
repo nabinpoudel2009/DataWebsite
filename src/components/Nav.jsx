@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineClose } from "react-icons/md";
+
 
 const Nav = () => {
+    
+    const [isToggleOpen, setIsToggleOpen] = useState(true);
+    
     return (
         <nav>
             <div className='max-w-7xl mx-auto backdrop-blur-3xl bg-transparent p-4 flex items-center justify-between'>
@@ -13,7 +19,48 @@ const Nav = () => {
                     </ul>
                     <button className='p-2 bg-gray-200 text-black rounded-sm hover:bg-emerald-500 border hover:border-white/40 transition-colors'>Get Started</button>
                 </div>
+                <div 
+                    className='block sm:hidden'
+                    onClick={() => setIsToggleOpen((prev) => !prev)}
+                >
+                    {
+                        isToggleOpen ? (
+                            <MdOutlineClose className='text-3xl'/>
+                        ) : (
+                            <GiHamburgerMenu className='text-2xl'/>
+                        )
+                    }
+                </div>
             </div>
+
+            {isToggleOpen && 
+                <div className='md:hidden bg-gray-900/50 flex px-3 py-2 border-t border-emerald-500/70'>
+                    <div className='flex space-y-3 flex-col'>
+                        <a 
+                            href="#" 
+                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
+                            onClick={() => setIsToggleOpen((prev) => !prev)}
+                        >
+                            Home
+                        </a>
+                        <a 
+                            href="#features"
+                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base'
+                            onClick={() => setIsToggleOpen((prev) => !prev)}
+                        >
+                            Account
+                        </a>
+                        <a 
+                            href="#pricing" 
+                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
+                            onClick={() => setIsToggleOpen((prev) => !prev)}
+                        >
+                            Sign In
+                        </a>
+                        <button className='p-1 bg-emerald-500 text-black rounded-md border border-white/50 mt-2 active:scale-98 transition-all'>Get Started</button>
+                    </div>
+                </div>
+            }
         </nav>
     )
 }
