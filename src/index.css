@@ -12,3 +12,12 @@ body {
 body {
     background-color: #0b0a0a;
 }
+
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.25s ease-in-out;
+}
+
+.mobile-menu.show {
+  transform: translateX(0);
+}

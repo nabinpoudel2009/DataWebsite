@@ -5,7 +5,7 @@ import { MdOutlineClose } from "react-icons/md";
 
 const Nav = () => {
     
-    const [isToggleOpen, setIsToggleOpen] = useState(true);
+    const [isToggleOpen, setIsToggleOpen] = useState(false);
     
     return (
         <nav>
@@ -33,34 +33,32 @@ const Nav = () => {
                 </div>
             </div>
 
-            {isToggleOpen && 
-                <div className='md:hidden bg-gray-900/50 flex px-3 py-2 border-t border-emerald-500/70'>
-                    <div className='flex space-y-3 flex-col'>
-                        <a 
-                            href="#" 
-                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
-                            onClick={() => setIsToggleOpen((prev) => !prev)}
-                        >
-                            Home
-                        </a>
-                        <a 
-                            href="#features"
-                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base'
-                            onClick={() => setIsToggleOpen((prev) => !prev)}
-                        >
-                            Account
-                        </a>
-                        <a 
-                            href="#pricing" 
-                            className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
-                            onClick={() => setIsToggleOpen((prev) => !prev)}
-                        >
-                            Sign In
-                        </a>
-                        <button className='p-1 bg-emerald-500 text-black rounded-md border border-white/50 mt-2 active:scale-98 transition-all'>Get Started</button>
-                    </div>
+            <div className={`md:hidden bg-transparent backdrop-blur-3xl flex px-3 py-2 border-t border-emerald-500/70 mobile-menu ${ isToggleOpen ? "show" : "" }`}>
+                <div className='flex space-y-3 flex-col'>
+                    <a 
+                        href="#" 
+                        className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
+                        onClick={() => setIsToggleOpen((prev) => !prev)}
+                    >
+                        Home
+                    </a>
+                    <a 
+                        href="#features"
+                        className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base'
+                        onClick={() => setIsToggleOpen((prev) => !prev)}
+                    >
+                        Account
+                    </a>
+                    <a 
+                        href="#pricing" 
+                        className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
+                        onClick={() => setIsToggleOpen((prev) => !prev)}
+                    >
+                        Sign In
+                    </a>
+                    <button className='p-1 bg-emerald-500 text-black rounded-md border border-white/50 mt-2 active:scale-98 transition-all'>Get Started</button>
                 </div>
-            }
+            </div>
         </nav>
     )
 }

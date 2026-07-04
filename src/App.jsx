@@ -3,9 +3,9 @@ import Nav from './components/Nav'
 
 const App = () => {
     return (
-        <div className='text-white overflow-hidden'>
+        <main className='text-white overflow-hidden'>
             <Nav />
-        </div>
+        </main>
     )
 }
 
