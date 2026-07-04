@@ -8,8 +8,8 @@ const Nav = () => {
     const [isToggleOpen, setIsToggleOpen] = useState(false);
     
     return (
-        <nav>
-            <div className='max-w-7xl mx-auto backdrop-blur-3xl bg-transparent p-4 flex items-center justify-between'>
+        <nav className='fixed w-full'>
+            <div className='max-w-7xl mx-auto backdrop-blur-lg bg-transparent p-4 flex items-center justify-between'>
                 <h1 className='text-2xl md:text-3xl text-emerald-400 font-bold'>REACT.</h1>
                 <div className='hidden items-center gap-x-5 sm:flex'>
                     <ul className='flex items-center gap-x-8'>
@@ -33,7 +33,7 @@ const Nav = () => {
                 </div>
             </div>
 
-            <div className={`md:hidden bg-transparent backdrop-blur-3xl flex px-3 py-2 border-t border-emerald-500/70 mobile-menu ${ isToggleOpen ? "show" : "" }`}>
+            <div className={`absolute z-50 w-full md:hidden rounded-2xl bg-transparent backdrop-blur-lg flex px-3 py-2 border-t border-emerald-500/70 mobile-menu ${ isToggleOpen ? "show" : "" }`}>
                 <div className='flex space-y-3 flex-col'>
                     <a 
                         href="#" 
