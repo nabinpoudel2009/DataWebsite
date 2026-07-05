@@ -13,7 +13,7 @@ const tagLine = [
 
 const Features = () => {
     return (
-        <section className='bg-white w-full p-2 md:p-5 lg-p-8'>
+        <section id='features' className='bg-white w-full p-2 md:p-5 lg-p-8'>
             <div className='max-w-7xl grid grid-cols-1 items-center md:grid-cols-2 mx-auto text-black'>
                 <div 
                     id='left' 

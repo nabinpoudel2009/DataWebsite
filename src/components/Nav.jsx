@@ -9,14 +9,14 @@ const Nav = () => {
     const [isToggleOpen, setIsToggleOpen] = useState(false);
     
     return (
-        <nav className='fixed w-full'>
+        <nav className='fixed w-full backdrop:blur-md bg-transparent z-50'>
             <div className='max-w-7xl mx-auto backdrop-blur-md bg-transparent p-4 flex items-center justify-between'>
-                <h1 className='text-2xl md:text-3xl text-emerald-400 font-bold'>REACT.</h1>
+                <h1 className='text-2xl md:text-3xl text-emerald-400 font-bold'>DataBloom.</h1>
                 <div className='hidden items-center gap-x-5 sm:flex'>
                     <ul className='flex items-center gap-x-8'>
-                        <li className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Home</li>
-                        <li className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Account</li>
-                        <li className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Sign In</li>
+                        <a href='#' className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Home</a>
+                        <a href='#features' className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Features</a>
+                        <a href='#signIn' className='cursor-pointer text-gray-300 hover:text-gray-100 transition-colors'>Sign In</a>
                     </ul>
                     <Button />
                 </div>
@@ -51,7 +51,7 @@ const Nav = () => {
                         Account
                     </a>
                     <a 
-                        href="#pricing" 
+                        href="#signIn" 
                         className='text-gray-300 hover:text-white transition-all duration-200 ease-in-out lg:text-base' 
                         onClick={() => setIsToggleOpen((prev) => !prev)}
                     >

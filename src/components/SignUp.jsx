@@ -12,11 +12,11 @@ const tipsAndTricks = [
 
 const SignUp = () => {
     return (
-        <section className='bg-black text-white'>
+        <section id='signIn' className='bg-black text-white'>
             <div className='max-w-7xl mx-auto p-2 sm:p-3 md:p-5'>
                 {tipsAndTricks.map((tipsAndTricks, key) => (
                     <div 
-                        className='grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-x-5'
+                        className='grid grid-cols-1 py-5 md:py-15 md:grid-cols-2 items-center justify-between gap-x-5'
                         key={key}
                     >
                         <div
@@ -28,7 +28,7 @@ const SignUp = () => {
                         </div>
                         <div 
                             id='right'
-                            className='grid justify-center'
+                            className='grid md:justify-center'
                         >
                             <div className='flex gap-x-2 p-2'>
                                 <input type="text" className='bg-gray-100 rounded-md text-black px-1 md:px-7 lg:px-10 outline-none ring-1 ring-emerald-400' placeholder='example@gmail.com'  autoComplete='none' />
