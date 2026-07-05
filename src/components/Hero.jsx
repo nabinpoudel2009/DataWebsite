@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 const Hero = () => {
     return (
@@ -13,7 +14,7 @@ const Hero = () => {
                     <p className='text-gray-100'>Fast, flexible and financing for </p>
                 </div>
                 <h6 className='text-xs mt-2 text-gray-400 p-2 sm:text-sm md:text-lg'>Monitor your data analytics to increase revenue for BTB, BTC & SASS platforms.</h6>
-                <button className='px-2 md:px-4 py-2 bg-gray-200 text-black rounded-sm hover:bg-emerald-500 border hover:border-white/40 transition-colors'>Get Started</button>
+                <Button />
             </div>
         </section>
     )
